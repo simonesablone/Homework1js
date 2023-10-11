@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drawing</title>
+    </head>
+    <style>
+        #canvas{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+    <body>
+        <canvas id="canvas"></canvas>
+    </body>
+        <script>
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            //drawing a rectangle
+            context.fillStyle = 'yellow';
+            context.fillRect(20,20,80,20);
+            //drawing a circle
+            context.beginPath();
+            context.arc(150,90,40,0,2*Math.PI);
+            context.stroke();
+            context.closePath();
+            //drawing a line
+            context.beginPath();
+            context.moveTo(50,50);
+            context.lineTo(10,50); 
+            context.stroke();
+            context.closePath();
+            //drawing a point
+            context.fillStyle = 'red';
+            context.fill();
+            context.fillRect(10,10,1,1);
+        </script>
+</html>
